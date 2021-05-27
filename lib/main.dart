@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:awesome_drawing_quiz/app_theme.dart';
-import 'package:awesome_drawing_quiz/game_route.dart';
-import 'package:awesome_drawing_quiz/home_page.dart';
+import 'package:admob_ads_starter/app_theme.dart';
+import 'package:admob_ads_starter/game_route.dart';
+import 'package:admob_ads_starter/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';

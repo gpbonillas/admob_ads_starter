@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: awesome_drawing_quiz
+name: admob_ads_starter
 description: Sample app for &#x27;Adding AdMob Ads to a Flutterr app&#x27; Codelab.
 publish_to: 'none'
 version: 1.0.0+1

@@ -13,15 +13,15 @@
 // limitations under the License.
 
 // TODO: Import ad_helper.dart
-import 'package:awesome_drawing_quiz/ad_helper.dart';
+import 'package:admob_ads_starter/ad_helper.dart';
 
 // TODO: Import google_mobile_ads.dart
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import 'package:awesome_drawing_quiz/app_theme.dart';
-import 'package:awesome_drawing_quiz/drawing.dart';
-import 'package:awesome_drawing_quiz/drawing_painter.dart';
-import 'package:awesome_drawing_quiz/quiz_manager.dart';
+import 'package:admob_ads_starter/app_theme.dart';
+import 'package:admob_ads_starter/drawing.dart';
+import 'package:admob_ads_starter/drawing_painter.dart';
+import 'package:admob_ads_starter/quiz_manager.dart';
 import 'package:flutter/material.dart';
 
 class GameRoute extends StatefulWidget {

@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:awesome_drawing_quiz/drawing.dart';
+import 'package:admob_ads_starter/drawing.dart';
 import 'package:flutter/material.dart';
 
 class DrawingPainter extends CustomPainter {
