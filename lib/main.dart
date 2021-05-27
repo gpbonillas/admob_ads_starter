@@ -14,7 +14,7 @@
 
 import 'package:awesome_drawing_quiz/app_theme.dart';
 import 'package:awesome_drawing_quiz/game_route.dart';
-import 'package:awesome_drawing_quiz/home_route.dart';
+import 'package:awesome_drawing_quiz/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,9 +29,9 @@ void main() async {
 
   runApp(
     MaterialApp(
-      home: HomeRoute(),
+      home: HomePage(),
       routes: <String, WidgetBuilder>{
-        '/home': (BuildContext context) => new HomeRoute(),
+        '/home': (BuildContext context) => new HomePage(),
         '/game': (BuildContext context) => new GameRoute()
       },
       theme: ThemeData(
