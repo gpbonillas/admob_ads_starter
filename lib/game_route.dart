@@ -43,8 +43,10 @@ class _GameRouteState extends State<GameRoute> implements QuizEventListener {
   bool _isBannerAdReady = false;
 
   // TODO: Add _interstitialAd
+  late InterstitialAd _interstitialAd;
 
   // TODO: Add _isInterstitialAdReady
+  bool _isInterstitialAdReady = false;
 
   // TODO: Add _rewardedAd
 
@@ -80,6 +82,23 @@ class _GameRouteState extends State<GameRoute> implements QuizEventListener {
     _bannerAd.load();
 
     // TODO: Initialize _interstitialAd
+    _interstitialAd = InterstitialAd(
+      adUnitId: AdHelper.interstitialAdUnitId,
+      request: AdRequest(),
+      listener: AdListener(
+        onAdLoaded: (_) {
+          _isInterstitialAdReady = true;
+        },
+        onAdFailedToLoad: (ad, err) {
+          print('Failed to load an interstitial ad: ${err.message}');
+          _isInterstitialAdReady = false;
+          ad.dispose();
+        },
+        onAdClosed: (_) {
+          _moveToHome();
+        },
+      ),
+    );
 
     // TODO: Initialize _rewardedAd
   }
@@ -234,6 +253,7 @@ class _GameRouteState extends State<GameRoute> implements QuizEventListener {
     _bannerAd.dispose();
 
     // TODO: Dispose an InterstitialAd object
+    _interstitialAd.dispose();
 
     // TODO: Dispose a RewardedAd object
 
@@ -256,6 +276,9 @@ class _GameRouteState extends State<GameRoute> implements QuizEventListener {
     });
 
     // TODO: Load an Interstitial Ad
+    if (level >= 3 && !_isInterstitialAdReady) {
+      _interstitialAd.load();
+    }
   }
 
   @override
@@ -276,8 +299,11 @@ class _GameRouteState extends State<GameRoute> implements QuizEventListener {
               child: Text('close'.toUpperCase()),
               onPressed: () {
                 // TODO: Display an Interstitial Ad
-
-                _moveToHome();
+                if (_isInterstitialAdReady) {
+                  _interstitialAd.show();
+                } else {
+                  _moveToHome();
+                }
               },
             ),
           ],
